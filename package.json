@@ -2,6 +2,9 @@
   "name": "RealTimeLog",
   "version": "0.1.0",
   "private": false,
+  "author": "cn007b",
+  "license": "MIT",
+  "main": " src/index.js",
   "devDependencies": {},
   "dependencies": {
     "body-parser": "^1.17.1",
@@ -9,6 +12,5 @@
     "socket.io": "^1.7.3"
   },
   "scripts": {
-    "start": "node src/index.js"
   }
 }
