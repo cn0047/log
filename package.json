@@ -1,0 +1,12 @@
+{
+  "name": "Real time log",
+  "version": "0.1.0",
+  "private": false,
+  "devDependencies": {},
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  },
+  "scripts": {}
+}
