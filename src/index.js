@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var socketIo = require('socket.io');
 
-var server = app.listen(80, function () {});
+var server = app.listen(3000, function () {});
 var socket = socketIo.listen(server);
 
 app.use(bodyParser.json());
