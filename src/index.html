@@ -8,7 +8,7 @@
 <div id="root"></div>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io('https://localhost:22458');
+  var socket = io('https://realtimelog.herokuapp.com:22458');
   var streamId = window.location.pathname.substring(1);
   socket.on('log', function(data) {
     if (data.streamId === streamId) {
