@@ -9,6 +9,6 @@
     "socket.io": "^1.7.3"
   },
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/index.js"
   }
 }
