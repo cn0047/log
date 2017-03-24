@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
 
 app.get('/:streamId?', function (req, res) {
     res.sendFile(__dirname + '/index.html');
-})
+});
 
 app.post('/:streamId?', function (req, res) {
     if (req.headers['content-type'] === 'application/json') {

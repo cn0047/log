@@ -14,8 +14,7 @@ and start listen you real time logs!!!
 With purpose to post something in your log stream just run:
 ````
 curl -XPOST https://realtimelog.herokuapp.com/test \
--H 'Content-Type: application/json' \
--d '{"code":"200", "status": "OK"}'
+-H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
 ````
 
 Under the hood, this log works with web sockets so you will see logs immediately in your browser!
