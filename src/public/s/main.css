@@ -1,0 +1,39 @@
+p {
+  border-top: 1px solid aliceblue;
+}
+.tags {
+  float: left;
+  width: 90px;
+}
+.date {
+  color: cornflowerblue;
+  display: block;
+  float: left;
+  font-size: 10px;
+  height: 10px;
+  width: 90px;
+}
+.ip {
+  color: lightgreen;
+  display: block;
+  float: left;
+  font-size: 10px;
+  height: 10px;
+  width: 90px;
+}
+.code {
+  float: left;
+}
+.blink {
+  background-color: white;
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 2s;
+  animation-name: example;
+  animation-duration: 2s;
+}
+@-webkit-keyframes example {
+  0% {background-color: lightyellow;}
+}
+@keyframes example {
+  0% {background-color: lightyellow;}
+}
