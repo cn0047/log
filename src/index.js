@@ -6,9 +6,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 var host = process.env.ENV === 'prod' ? 'https://realtimelog.herokuapp.com' : 'http://localhost';
 var socketIoJs = (process.env.ENV === 'prod' ? host : '') + '/socket.io/socket.io.js';
-var server = app.listen(port, function () {
-  console.log('Started listen %s:%s ', host, port);
-});
+var server = app.listen(port, function () { });
 var socket = socketIo.listen(server);
 
 app.use(express.static('./src/public'));

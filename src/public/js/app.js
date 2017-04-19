@@ -1,8 +1,9 @@
+/** global: io */
 var socket = io.connect();
 var streamId = window.location.pathname.substring(1);
 var autoScrool = true;
 
-window.onscroll = function(e) {
+window.onscroll = function() {
   autoScrool = (
     (window.innerHeight + window.scrollY) >= document.body.offsetHeight
   );
