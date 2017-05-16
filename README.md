@@ -25,15 +25,9 @@ curl -XPOST https://realtimelog.herokuapp.com/test \
 PHP:
 
 ````php
-$headers = [
-    'Content-Type: application/json',
-];
-$json = json_encode([
-    'code' => 200,
-]);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://realtimelog.herokuapp.com/test');
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['code' => 200]));
 curl_exec($ch);
 ````
