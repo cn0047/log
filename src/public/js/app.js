@@ -1,4 +1,6 @@
 /** global: io */
+/** global: hljs */
+
 var socket = io.connect();
 var streamId = window.location.pathname.substring(1);
 var autoScrool = true;
