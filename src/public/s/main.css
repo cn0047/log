@@ -1,7 +1,11 @@
 p {
-  border-top: 1px solid aliceblue;
+  border-top: 1px solid whitesmoke;
+  clear: both;
+  margin: 5px 0;
+  padding: 5px 0;
 }
 .tags {
+  display: block;
   float: left;
   width: 90px;
 }
@@ -14,7 +18,7 @@ p {
   width: 90px;
 }
 .ip {
-  color: lightgreen;
+  color: dimgray;
   display: block;
   float: left;
   font-size: 10px;
@@ -22,18 +26,44 @@ p {
   width: 90px;
 }
 .code {
-  float: left;
+  display: block;
+  float: right;
+  width: calc(100% - 90px);
+}
+.codeExample {
+  background-color: gainsboro;
+  font-size: 11px;
 }
 .blink {
-  background-color: white;
-  -webkit-animation-name: example;
   -webkit-animation-duration: 2s;
-  animation-name: example;
+  -webkit-animation-name: example;
   animation-duration: 2s;
+  animation-name: example;
+  background-color: white;
 }
 @-webkit-keyframes example {
   0% {background-color: lightyellow;}
 }
 @keyframes example {
   0% {background-color: lightyellow;}
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content span {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }

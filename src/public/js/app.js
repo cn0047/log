@@ -30,13 +30,18 @@ socket.on('log', function(data) {
       s2.innerHTML = data.ip;
       d.appendChild(s2);
 
+      var pre = document.createElement('pre');
+
       var c = document.createElement('code');
-      c.className = 'code blink';
-      c.innerHTML = JSON.stringify(data.data);
+      c.className = 'code blink hljs json';
+      c.innerHTML = JSON.stringify(data.data, null, '\t');
+      hljs.highlightBlock(c);
+      pre.appendChild(c);
 
       p.appendChild(d);
-      p.appendChild(c);
+      p.appendChild(pre);
       document.getElementById('root').appendChild(p);
+
       if (autoScrool === true) {
         window.scrollTo(0, document.body.scrollHeight);
       }

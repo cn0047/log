@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:streamId?', function (req, res) {
-  res.render('index', {socketIoJs: socketIoJs});
+  res.render('index', {socketIoJs: socketIoJs, streamId: req.params.streamId});
 });
 
 app.post('/:streamId?', function (req, res) {
