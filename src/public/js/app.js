@@ -31,7 +31,7 @@ socket.on('log', function(data) {
       d.appendChild(s2);
 
       var c = document.createElement('code');
-      c.className = 'blink';
+      c.className = 'code blink';
       c.innerHTML = JSON.stringify(data.data);
 
       p.appendChild(d);

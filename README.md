@@ -31,5 +31,5 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['code' => 200]));
 curl_exec($ch);
 // OR
-exec("curl -s https://realtimelog.herokuapp.com/test -H 'Content-Type: application/json' -d '".json_encode($a)."'");
+exec("curl -s https://realtimelog.herokuapp.com/test -H 'Content-Type: application/json' -d '".json_encode(['code' => 200])."'");
 ````
