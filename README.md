@@ -22,6 +22,15 @@ curl -XPOST https://realtimelog.herokuapp.com/test \
 -H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
 ````
 
+JavaScript:
+
+````javascript
+fetch('https://realtimelog.herokuapp.com/test', {
+    method: 'post', headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({code: 200, status: "OK"})
+});
+````
+
 PHP:
 
 ````php
