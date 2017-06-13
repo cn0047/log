@@ -20,6 +20,13 @@ html(lang="en")
             pre.codeExample.
               curl -XPOST https://realtimelog.herokuapp.com/#{streamId} \
               -H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
+            | JavaScript:
+            br
+            pre.codeExample.
+              fetch('https://realtimelog.herokuapp.com/x ', {
+                  method: 'post', headers: {"Content-Type": "application/json"},
+                  body: JSON.stringify({code: 200, status: "OK"})
+              });
             | PHP:
             br
             pre.codeExample.
