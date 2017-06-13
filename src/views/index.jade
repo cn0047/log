@@ -23,7 +23,7 @@ html(lang="en")
             | JavaScript:
             br
             pre.codeExample.
-              fetch('https://realtimelog.herokuapp.com/x ', {
+              fetch('https://realtimelog.herokuapp.com/#{streamId}', {
                   method: 'post', headers: {"Content-Type": "application/json"},
                   body: JSON.stringify({code: 200, status: "OK"})
               });
