@@ -2,9 +2,9 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var socketIo = require("socket.io");
 
-var routes = require('./routes/index');
-var cors = require('./middlewares/cors');
-var config = require('./configs/main');
+var routes = require("./routes/index");
+var cors = require("./middlewares/cors");
+var config = require("./configs/main");
 
 var app = express();
 var server = app.listen(port);
@@ -16,4 +16,4 @@ app.set("view engine", "jade");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors);
-app.use('/', routes);
+app.use("/", routes);
