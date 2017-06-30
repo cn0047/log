@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "jade": "^1.11.0",
+    "pug": "^2.0.0-rc.2",
     "socket.io": "^1.7.3"
   },
   "scripts": {
