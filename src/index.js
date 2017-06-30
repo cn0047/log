@@ -1,42 +1,19 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var socketIo = require('socket.io');
+var express = require("express");
+var bodyParser = require("body-parser");
+var socketIo = require("socket.io");
+
+var routes = require('./routes/index');
+var cors = require('./middlewares/cors');
+var config = require('./configs/main');
 
 var app = express();
-var port = process.env.PORT || 3000;
-var host = process.env.ENV === 'prod' ? 'https://realtimelog.herokuapp.com' : 'http://localhost';
-var socketIoJs = (process.env.ENV === 'prod' ? host : '') + '/socket.io/socket.io.js';
 var server = app.listen(port);
-var socket = socketIo.listen(server);
+global.socket = socketIo.listen(server);
 
-app.use(express.static('./src/public'));
-app.set('views', './src/views');
-app.set('view engine', 'jade');
+app.use(express.static("./src/public"));
+app.set("views", "./src/views");
+app.set("view engine", "jade");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-app.get('/', function (req, res) {
-  var streamId = Math.random().toString(36).substring(2);
-  res.redirect('/' + streamId);
-});
-
-app.get('/:streamId?', function (req, res) {
-  res.render('index', {socketIoJs: socketIoJs, streamId: req.params.streamId});
-});
-
-app.post('/:streamId?', function (req, res) {
-  var ip = req.headers['x-forwarded-for']
-    || req.connection.remoteAddress
-    || req.socket.remoteAddress
-    || req.connection.socket.remoteAddress
-  ;
-  if (req.headers['content-type'] === 'application/json') {
-    socket.emit('log', {streamId: req.params.streamId, format: 'json', data: req.body, ip: ip});
-  }
-  res.send('');
-});
+app.use(cors);
+app.use('/', routes);
