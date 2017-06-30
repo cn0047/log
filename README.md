@@ -3,6 +3,7 @@ This is simple REAL-TIME log.
 
 [![Build Status](https://scrutinizer-ci.com/g/cn007b/log/badges/build.png?b=master)](https://scrutinizer-ci.com/g/cn007b/log/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cn007b/log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/cn007b/log/?branch=master)
+[![bitHound Overall Score](https://www.bithound.io/github/cn007b/log/badges/score.svg)](https://www.bithound.io/github/cn007b/log)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1b5adb99d453499e88aa9e4b7314e979)](https://www.codacy.com/app/cn007b/log?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cn007b/log&amp;utm_campaign=Badge_Grade)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/d947a4c8-b9a3-4ab2-a81f-376dc1334bbc/mini.png)](https://insight.sensiolabs.com/projects/d947a4c8-b9a3-4ab2-a81f-376dc1334bbc)
 
