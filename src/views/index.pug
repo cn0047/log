@@ -18,12 +18,12 @@ html(lang="en")
             | Bash:
             br
             pre.codeExample.
-              curl -XPOST #{host}/#{streamId} \
+              curl -XPOST #{host}:#{port}/#{streamId} \
               -H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
             | JavaScript:
             br
             pre.codeExample.
-              fetch('#{host}/#{streamId}', {
+              fetch('#{host}:#{port}/#{streamId}', {
                   method: 'post', headers: {"Content-Type": "application/json"},
                   body: JSON.stringify({code: 200, status: "OK"})
               });
@@ -31,12 +31,12 @@ html(lang="en")
             br
             pre.codeExample.
               $ch = curl_init();
-              curl_setopt($ch, CURLOPT_URL, '#{host}/#{streamId}');
+              curl_setopt($ch, CURLOPT_URL, '#{host}:#{port}/#{streamId}');
               curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
               curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['code' => 200]));
               curl_exec($ch);
               // OR
-              exec("curl -s #{host}/#{streamId} -H 'Content-Type: application/json' -d '".json_encode(['code' => 200])."'");
+              exec("curl -s #{host}:#{port}/#{streamId} -H 'Content-Type: application/json' -d '".json_encode(['code' => 200])."'");
 
     #root
     script(type='text/javascript', src=socketIoJs)

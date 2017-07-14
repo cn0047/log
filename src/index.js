@@ -16,4 +16,8 @@ app.set("view engine", "pug");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors);
+app.use(function(req, res, next) {
+  res.removeHeader("X-Powered-By");
+  next();
+});
 app.use("/", routes);

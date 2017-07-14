@@ -10,6 +10,7 @@ router.get("/", function (req, res) {
 router.get("/:streamId?", function (req, res) {
   res.render("index", {
     host: global.host,
+    port: global.port,
     socketIoJs: global.socketIoJs,
     streamId: req.params.streamId
   });
