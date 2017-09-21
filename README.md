@@ -20,7 +20,7 @@ With the purpose to post something in your log stream use any code from examples
 JavaScript:
 
 ````javascript
-fetch('https://realtimelog.herokuapp.com/test', {
+fetch('https://realtimelog.herokuapp.com:443/test', {
   method: 'post', headers: {'Content-Type': 'application/json'},
   body: JSON.stringify({code: 200, status: 'OK'})
 });
@@ -29,7 +29,7 @@ fetch('https://realtimelog.herokuapp.com/test', {
 NodeJS:
 
 ````javascript
-const r = require('http').request({
+const r = require('https').request({
   host: 'realtimelog.herokuapp.com',
   path: '/test',
   method: 'POST',
