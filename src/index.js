@@ -7,7 +7,7 @@ var cors = require("./middlewares/cors");
 var config = require("./configs/main");
 
 var app = express();
-var server = app.listen(port);
+var server = app.listen(APP_PORT);
 global.socket = socketIo.listen(server);
 
 app.use(express.static("./src/public"));

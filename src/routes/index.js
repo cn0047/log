@@ -9,9 +9,10 @@ router.get("/", function (req, res) {
 
 router.get("/:streamId?", function (req, res) {
   res.render("index", {
-    host: global.host,
-    port: global.port,
-    socketIoJs: global.socketIoJs,
+    hostName: global.APP_HOST_NAME,
+    host: global.APP_HOST,
+    port: global.APP_PORT_FOR_HELP_BLOCK,
+    socketIoJs: global.APP_SOCKET_IO_JS,
     streamId: req.params.streamId
   });
 });

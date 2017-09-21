@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
   head
     title="Real time log"
-    link(rel='stylesheet', type='text/css', href='/s/main.css')
+    link(rel='stylesheet', type='text/css', href='/s/main.css?v2')
     link(rel='stylesheet', type='text/css', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/tomorrow.min.css')
 
   body
@@ -15,18 +15,25 @@ html(lang="en")
             | With the purpose to post something in this stream use any code from examples below.
             br
             br
-            | Bash:
-            br
-            pre.codeExample.
-              curl -XPOST #{host}:#{port}/#{streamId} \
-              -H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
             | JavaScript:
             br
             pre.codeExample.
               fetch('#{host}:#{port}/#{streamId}', {
-                  method: 'post', headers: {"Content-Type": "application/json"},
-                  body: JSON.stringify({code: 200, status: "OK"})
+                method: 'post', headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({code: 200, status: "OK"})
               });
+            | NodeJS:
+            br
+            pre.codeExample.
+              const r = require('http').request({
+                host: '#{hostName}',
+                port: #{port},
+                path: '/#{streamId}',
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'}
+              });
+              r.write(JSON.stringify({code: 200, status: "OK"}));
+              r.end();
             | PHP:
             br
             pre.codeExample.
@@ -37,7 +44,13 @@ html(lang="en")
               curl_exec($ch);
               // OR
               exec("curl -s #{host}:#{port}/#{streamId} -H 'Content-Type: application/json' -d '".json_encode(['code' => 200])."'");
+            | Bash:
+            br
+            pre.codeExample.
+              curl -XPOST #{host}:#{port}/#{streamId} \
+              -H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
 
+      a.pull-right(href="https://github.com/cn007b/log") Fork me on GitHub
     #root
     script(type='text/javascript', src=socketIoJs)
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')

@@ -17,20 +17,27 @@ Under the hood, this log works with web sockets so you will see logs immediately
 
 With the purpose to post something in your log stream use any code from examples below.
 
-Bash:
-
-````bash
-curl -XPOST https://realtimelog.herokuapp.com/test \
--H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
-````
-
 JavaScript:
 
 ````javascript
 fetch('https://realtimelog.herokuapp.com/test', {
-    method: 'post', headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({code: 200, status: "OK"})
+  method: 'post', headers: {"Content-Type": "application/json"},
+  body: JSON.stringify({code: 200, status: "OK"})
 });
+````
+
+NodeJS:
+
+````javascript
+const r = require('http').request({
+  host: 'realtimelog.herokuapp.com',
+  port: 443,
+  path: '/test',
+  method: 'POST',
+  headers: {'Content-Type': 'application/json'}
+});
+r.write(JSON.stringify({code: 200, status: "OK"}));
+r.end();
 ````
 
 PHP:
@@ -43,4 +50,11 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['code' => 200]));
 curl_exec($ch);
 // OR
 exec("curl -s https://realtimelog.herokuapp.com/test -H 'Content-Type: application/json' -d '".json_encode(['code' => 200])."'");
+````
+
+Bash:
+
+````bash
+curl -XPOST https://realtimelog.herokuapp.com/test \
+-H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
 ````

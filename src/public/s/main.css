@@ -1,8 +1,24 @@
+body {
+  margin: 0;
+}
 p {
   border-top: 1px solid whitesmoke;
   clear: both;
   margin: 5px 0;
   padding: 5px 0;
+}
+#nav {
+  background-color: whitesmoke;
+  padding: 10px;
+  border-bottom: 1px solid gainsboro;
+  color: dimgray;
+}
+#nav a {
+  text-decoration: blink;
+  color: seagreen;
+}
+#nav .dropdown {
+  cursor: pointer;
 }
 .tags {
   display: block;
@@ -66,4 +82,7 @@ p {
 }
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.pull-right {
+  float: right;
 }

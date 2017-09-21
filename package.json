@@ -5,8 +5,8 @@
   "author": "cn007b",
   "license": "MIT",
   "main": " src/index.js",
-  "engines" : { 
-    "node" : "6.11.1" 
+  "engines": {
+    "node": "6.11.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
