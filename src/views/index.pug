@@ -19,8 +19,8 @@ html(lang="en")
             br
             pre.codeExample.
               fetch('#{host}:#{port}/#{streamId}', {
-                method: 'post', headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({code: 200, status: 'OK'})
+                method: 'post', headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({code: 200, status: "OK"})
               });
             | NodeJS:
             br
@@ -31,7 +31,7 @@ html(lang="en")
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'}
               });
-              r.write(JSON.stringify({code: 200, status: 'OK'}));
+              r.write(JSON.stringify({code: 200, status: "OK"}));
               r.end();
             | PHP:
             br
