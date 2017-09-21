@@ -21,8 +21,8 @@ JavaScript:
 
 ````javascript
 fetch('https://realtimelog.herokuapp.com/test', {
-  method: 'post', headers: {"Content-Type": "application/json"},
-  body: JSON.stringify({code: 200, status: "OK"})
+  method: 'post', headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify({code: 200, status: 'OK'})
 });
 ````
 
@@ -35,7 +35,7 @@ const r = require('http').request({
   method: 'POST',
   headers: {'Content-Type': 'application/json'}
 });
-r.write(JSON.stringify({code: 200, status: "OK"}));
+r.write(JSON.stringify({code: 200, status: 'OK'}));
 r.end();
 ````
 
