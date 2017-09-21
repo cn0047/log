@@ -31,7 +31,6 @@ NodeJS:
 ````javascript
 const r = require('http').request({
   host: 'realtimelog.herokuapp.com',
-  port: 443,
   path: '/test',
   method: 'POST',
   headers: {'Content-Type': 'application/json'}
