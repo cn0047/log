@@ -1,23 +1,24 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var socketIo = require("socket.io");
+const express = require('express');
+const bodyParser = require('body-parser');
+const socketIo = require('socket.io');
 
-var routes = require("./routes/index");
-var cors = require("./middlewares/cors");
-var config = require("./configs/main");
+const routes = require('./routes/index');
+const cors = require('./middlewares/cors');
 
-var app = express();
-var server = app.listen(APP_PORT);
+require('./configs/main');
+
+const app = express();
+const server = app.listen(global.APP_PORT);
 global.socket = socketIo.listen(server);
 
-app.use(express.static("./src/public"));
-app.set("views", "./src/views");
-app.set("view engine", "pug");
+app.use(express.static('./src/public'));
+app.set('views', './src/views');
+app.set('view engine', 'pug');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors);
-app.use(function(req, res, next) {
-  res.removeHeader("X-Powered-By");
+app.use((req, res, next) => {
+  res.removeHeader('X-Powered-By');
   next();
 });
-app.use("/", routes);
+app.use('/', routes);
