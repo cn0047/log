@@ -1,52 +1,104 @@
 /** global: io */
-/** global: hljs */
-
 var socket = io.connect();
 var streamId = window.location.pathname.substring(1);
 var autoScrool = true;
 
+/**
+ * Gets element with log message data.
+ *
+ * @param {String} data Log message data.
+ */
+function getCodeElement(data) {
+  var c = document.createElement('code');
+  c.className = 'code blink hljs json';
+  c.innerHTML = JSON.stringify(data, null, "\t");
+  /** global: hljs */
+  hljs.highlightBlock(c);
+
+  var pre = document.createElement('pre');
+  pre.appendChild(c);
+
+  return pre;
+}
+
+/**
+ * Gets element with ip address.
+ *
+ * @param {String} ip Ip address.
+ */
+function getIpElement(ip) {
+  var s = document.createElement('span');
+  s.className = 'ip';
+  s.innerHTML = ip;
+
+  return s;
+}
+
+/**
+ * Gets element with current date.
+ */
+function getDateElement() {
+  var s = document.createElement('span');
+  s.className = 'date';
+  s.innerHTML = (new Date()).toLocaleDateString(
+    'en-GB',
+    {hour: '2-digit', minute: '2-digit', second: '2-digit'}
+  );
+
+  return s;
+}
+
+/**
+ * Gets element with tags content.
+ *
+ * @param {Object} data LOG.NEW payload.
+ */
+function getTags(data) {
+  var d = document.createElement('div');
+  d.className = 'tags';
+  d.appendChild(getDateElement());
+  d.appendChild(getIpElement(data.ip));
+
+  return d;
+}
+
+/**
+ * Renders new log message.
+ *
+ * @param {Object} data LOG.NEW payload.
+ */
+function renderJson(data) {
+  var p = document.createElement('p');
+  p.appendChild(getTags(data));
+  p.appendChild(getCodeElement(data.data));
+  document.getElementById('root').appendChild(p);
+
+  if (autoScrool === true) {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+}
+
+/**
+ * Auto-scrolling to latest data.
+ */
 window.onscroll = function() {
   autoScrool = (
     (window.innerHeight + window.scrollY) >= document.body.offsetHeight
   );
 };
 
-socket.on("log", function(data) {
-  if (data.streamId === streamId) {
-    if (data.format === "json") {
-      var p = document.createElement("p");
-
-      var d = document.createElement("div");
-      d.className = "tags";
-
-      var s1 = document.createElement("span");
-      s1.className = "date";
-      s1.innerHTML = (new Date()).toLocaleDateString(
-        "en-GB",
-        {hour: "2-digit", minute: "2-digit", second: "2-digit"}
-      );
-      d.appendChild(s1);
-
-      var s2 = document.createElement("span");
-      s2.className = "ip";
-      s2.innerHTML = data.ip;
-      d.appendChild(s2);
-
-      var pre = document.createElement("pre");
-
-      var c = document.createElement("code");
-      c.className = "code blink hljs json";
-      c.innerHTML = JSON.stringify(data.data, null, "\t");
-      hljs.highlightBlock(c);
-      pre.appendChild(c);
-
-      p.appendChild(d);
-      p.appendChild(pre);
-      document.getElementById("root").appendChild(p);
-
-      if (autoScrool === true) {
-        window.scrollTo(0, document.body.scrollHeight);
-      }
-    }
+/**
+ * Handler for new data.
+ * Renders data on web page (add to the bottom).
+ *
+ * @event LOG.NEW
+ */
+socket.on('log', function(data) {
+  if (data.streamId !== streamId) {
+    return;
   }
+  if (data.format === 'json') {
+    return renderJson(data);
+  }
+  console.error('Got unsupported format: %s', data.format);
 });

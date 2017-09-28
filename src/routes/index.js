@@ -32,6 +32,8 @@ router.get('/:streamId?', (req, res) => {
 /**
  * Post message into page with particular stream id.
  *
+ * @emits LOG.NEW
+ *
  * @param {Object} req HTTP request.
  * @param {Object} res HTTP response.
  */
