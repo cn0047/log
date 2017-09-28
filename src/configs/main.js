@@ -1,3 +1,7 @@
+/**
+ * All top app configs housed here.
+ */
+
 global.APP_PORT = process.env.PORT || 3000;
 global.APP_PORT_FOR_HELP_BLOCK = process.env.ENV === 'prod' ? 443 : global.APP_PORT;
 global.APP_HOST_NAME = process.env.ENV === 'prod' ? 'realtimelog.herokuapp.com' : 'localhost';
