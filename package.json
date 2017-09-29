@@ -13,6 +13,11 @@
       "browser": true,
       "node": true
     },
+    "globals": {
+      "window": true,
+      "io": true,
+      "hljs": true
+    },
     "extends": [
       "airbnb-base"
     ]

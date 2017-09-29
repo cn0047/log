@@ -1,7 +1,7 @@
 /** global: io */
 const socket = io.connect();
 const streamId = window.location.pathname.substring(1);
-const autoScrool = true;
+let autoScrool = true;
 
 /**
  * Gets element with log message data.
