@@ -1,7 +1,7 @@
 /** global: io */
-var socket = io.connect();
-var streamId = window.location.pathname.substring(1);
-var autoScrool = true;
+const socket = io.connect();
+const streamId = window.location.pathname.substring(1);
+const autoScrool = true;
 
 /**
  * Gets element with log message data.
@@ -9,13 +9,13 @@ var autoScrool = true;
  * @param {String} data Log message data.
  */
 function getCodeElement(data) {
-  var c = document.createElement('code');
+  const c = document.createElement('code');
   c.className = 'code blink hljs json';
   c.innerHTML = JSON.stringify(data, null, "\t");
   /** global: hljs */
   hljs.highlightBlock(c);
 
-  var pre = document.createElement('pre');
+  const pre = document.createElement('pre');
   pre.appendChild(c);
 
   return pre;
@@ -27,7 +27,7 @@ function getCodeElement(data) {
  * @param {String} ip Ip address.
  */
 function getIpElement(ip) {
-  var s = document.createElement('span');
+  const s = document.createElement('span');
   s.className = 'ip';
   s.innerHTML = ip;
 
@@ -38,11 +38,11 @@ function getIpElement(ip) {
  * Gets element with current date.
  */
 function getDateElement() {
-  var s = document.createElement('span');
+  const s = document.createElement('span');
   s.className = 'date';
   s.innerHTML = (new Date()).toLocaleDateString(
     'en-GB',
-    {hour: '2-digit', minute: '2-digit', second: '2-digit'}
+    { hour: '2-digit', minute: '2-digit', second: '2-digit' },
   );
 
   return s;
@@ -54,7 +54,7 @@ function getDateElement() {
  * @param {Object} data LOG.NEW payload.
  */
 function getTags(data) {
-  var d = document.createElement('div');
+  const d = document.createElement('div');
   d.className = 'tags';
   d.appendChild(getDateElement());
   d.appendChild(getIpElement(data.ip));
@@ -68,7 +68,7 @@ function getTags(data) {
  * @param {Object} data LOG.NEW payload.
  */
 function renderJson(data) {
-  var p = document.createElement('p');
+  const p = document.createElement('p');
   p.appendChild(getTags(data));
   p.appendChild(getCodeElement(data.data));
   document.getElementById('root').appendChild(p);
@@ -81,7 +81,7 @@ function renderJson(data) {
 /**
  * Auto-scrolling to latest data.
  */
-window.onscroll = function() {
+window.onscroll = function () {
   autoScrool = (
     (window.innerHeight + window.scrollY) >= document.body.offsetHeight
   );
@@ -93,12 +93,10 @@ window.onscroll = function() {
  *
  * @event LOG.NEW
  */
-socket.on('log', function(data) {
-  if (data.streamId !== streamId) {
-    return;
+socket.on('log', function (data) {
+  if (data.streamId === streamId) {
+    if (data.format === 'json') {
+      renderJson(data);
+    }
   }
-  if (data.format === 'json') {
-    return renderJson(data);
-  }
-  console.error('Got unsupported format: %s', data.format);
 });
