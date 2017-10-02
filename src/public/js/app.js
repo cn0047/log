@@ -81,11 +81,11 @@ function renderJson(data) {
 /**
  * Auto-scrolling to latest data.
  */
-window.onscroll = function () {
+window.addEventListener('onscroll', () => {
   autoScrool = (
     (window.innerHeight + window.scrollY) >= document.body.offsetHeight
   );
-};
+});
 
 /**
  * Handler for new data.
@@ -93,7 +93,7 @@ window.onscroll = function () {
  *
  * @event LOG.NEW
  */
-socket.on('log', function (data) {
+socket.on('log', (data) => {
   if (data.streamId === streamId) {
     if (data.format === 'json') {
       renderJson(data);
