@@ -10,19 +10,22 @@
   },
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.15.5",
+    "express": "^4.16.1",
     "pug": "^2.0.0-rc.2",
-    "socket.io": "^1.7.3"
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {
-    "eslint": "^4.7.2",
-    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.1",
     "eslint-plugin-import": "^2.7.0",
-    "nodemon": "^1.11.0"
+    "jest": "^21.2.1",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "node_modules/.bin/eslint src/"
+    "lint": "node_modules/.bin/eslint src/",
+    "test": "node_modules/.bin/jest -i"
   },
   "eslintConfig": {
     "env": {
@@ -40,5 +43,9 @@
   },
   "eslintIgnore": [
     "src/public/*"
-  ]
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": ".coverage"
+  }
 }
