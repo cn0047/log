@@ -11,7 +11,7 @@ let autoScrool = true;
 function getCodeElement(data) {
   const c = document.createElement('code');
   c.className = 'code blink hljs json';
-  c.innerHTML = JSON.stringify(data, null, "\t");
+  c.innerHTML = JSON.stringify(data, null, "\t"); // eslint-disable-line
   /** global: hljs */
   hljs.highlightBlock(c);
 
