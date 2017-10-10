@@ -25,11 +25,12 @@
   "scripts": {
     "start": "node src/index.js",
     "lint": "node_modules/.bin/eslint src/",
-    "test": "node_modules/.bin/jest -i"
+    "test": "node_modules/.bin/jest --forceExit"
   },
   "eslintConfig": {
     "env": {
       "browser": true,
+      "jest": true,
       "node": true
     },
     "globals": {
