@@ -49,7 +49,53 @@ html(lang="en")
               curl -XPOST #{host}:#{port}/#{streamId} \
               -H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
 
-      a.pull-right(href="https://github.com/cn007b/log") Fork me on GitHub
+      .dropdown
+        span.dropbtn News
+        .dropdown-content
+          span
+            table
+              tr
+                td
+                  span.date Oct 10, 2017
+                td.nw
+                  | Added unit tests and coverage report 😎.
+              tr
+                td
+                  span.date Sep 27, 2017
+                td.nw
+                  | Added eslint.
+              tr
+                td
+                  span.date Sep 21, 2017
+                td.nw
+                  | Added NodeJS usage example. Switched from http to https.
+              tr
+                td
+                  span.date Jun 30, 2017
+                td.nw
+                  | Template engine jade replaced with pug.
+              tr
+                td
+                  span.date Jun 13, 2017
+                td.nw
+                  | Added JavaScript usage example.
+              tr
+                td
+                  span.date May 18, 2017
+                td.nw
+                  | Added code highlight 🎨.
+              tr
+                td
+                  span.date Apr 19, 2017
+                td.nw
+                  | Added PHP usage example.
+              tr
+                td
+                  span.date Mar 22, 2017
+                td.nw
+                  | Init project 🎬. Project deployed on heroku and available by url: realtimelog.herokuapp.com
+
+      a.pull-right.green(href="https://github.com/cn007b/log") Fork me on GitHub
     #root
     script(type='text/javascript', src=socketIoJs)
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')

@@ -2,6 +2,8 @@ const xPoweredBy = require('./../../../src/middlewares/xPoweredBy');
 
 describe('X-Powered-By middleware.', () => {
   test('Main test', () => {
+    /** global: jest */
+
     const cb = jest.fn();
     const res = {
       removeHeader: jest.fn(),

@@ -14,10 +14,20 @@ p {
   color: dimgray;
 }
 #nav a {
+  text-decoration: none;
+  color: dimgray;
+}
+#nav .blue {
+  color: cornflowerblue;
+}
+#nav .green {
   text-decoration: blink;
   color: seagreen;
 }
-#nav .dropdown {
+#nav span {
+  margin-right: 9px;
+}
+#nav .dropdown, span {
   cursor: pointer;
 }
 .tags {
@@ -49,6 +59,9 @@ p {
 .codeExample {
   background-color: gainsboro;
   font-size: 11px;
+}
+.nw {
+  white-space: nowrap;
 }
 .blink {
   -webkit-animation-duration: 2s;
