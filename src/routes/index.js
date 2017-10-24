@@ -46,8 +46,8 @@ router.post('/:streamId?', (req, res) => {
 
   // Emit WebSocket event.
   if (req.headers['content-type'] === 'application/json') {
-    global.socket.emit('log', {
-      streamId: req.params.streamId, format: 'json', data: req.body, ip,
+    global.socket.broadcast.to(req.params.streamId).emit('log', {
+      format: 'json', data: req.body, ip,
     });
   }
 
