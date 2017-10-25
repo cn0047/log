@@ -46,8 +46,10 @@ router.post('/:streamId?', (req, res) => {
 
   // Emit WebSocket event.
   if (req.headers['content-type'] === 'application/json') {
-    global.socket.broadcast.to(req.params.streamId).emit('log', {
-      format: 'json', data: req.body, ip,
+    // Socket.io rooms disabled here because rooms provide restricted behavior,
+    // for example: it is impossible to open in one browser two or three different streams (rooms).
+    global.socket.emit('log', {
+      streamId: req.params.streamId, format: 'json', data: req.body, ip,
     });
   }
 
