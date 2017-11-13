@@ -32,48 +32,49 @@ describe('Index routes.', () => {
     router.handle(request, response);
   });
 
-  /**
-   * This block describes test cases related to POSTing data into page.
-   */
-  describe('POST data into page with certain streamId.', () => {
+  test('POST plain text into page with certain streamId', (done) => {
     const request = {
       method: 'POST',
       url: '/testId',
       headers: {
-        'content-type': 'application/json',
+        'x-forwarded-for': 'testIp',
+        'content-type': 'text',
       },
+      body: 'Test with plain text body.',
+    };
+    /** global: jest */
+    const response = {
+      status: jest.fn(),
+      send: () => done(),
+    };
+
+    router.handle(request, response);
+  });
+
+  test('POST JSON data into page with certain streamId', (done) => {
+    const request = {
+      method: 'POST',
+      url: '/testId',
+      headers: { 'content-type': 'application/json' },
       connection: {
-        socket: {
-          remoteAddress: 'testIp',
-        },
+        socket: { remoteAddress: 'testIp' },
       },
       socket: {},
-      body: 'RAW Body.',
+      body: '{"decs": "JSON data"}',
     };
     /** global: jest */
     const response = {
       status: jest.fn(),
       send: jest.fn(),
     };
+    global.socket = {
+      emit: (type, data) => {
+        expect(type).toBe('log');
+        expect(typeof data).toBe('object');
+        done();
+      },
+    };
 
-    test('POST JSON', (done) => {
-      request.body = '{"decs": "JSON data"}';
-      global.socket = {
-        emit: (type, data) => {
-          expect(type).toBe('log');
-          expect(typeof data).toBe('object');
-          done();
-        },
-      };
-
-      router.handle(request, response);
-    });
-
-    test('POST plain text', (done) => {
-      request.headers['content-type'] = 'text';
-      response.send = () => done();
-
-      router.handle(request, response);
-    });
+    router.handle(request, response);
   });
 });
