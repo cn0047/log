@@ -32,7 +32,10 @@ describe('Index routes.', () => {
     router.handle(request, response);
   });
 
-  test('POST to page by streamId', (done) => {
+  /**
+   * This block describes test cases related to POSTing data into page.
+   */
+  describe('POST data into page with certain streamId.', () => {
     const request = {
       method: 'POST',
       url: '/testId',
@@ -47,18 +50,30 @@ describe('Index routes.', () => {
       socket: {},
       body: 'RAW Body.',
     };
+    /** global: jest */
     const response = {
       status: jest.fn(),
       send: jest.fn(),
     };
-    global.socket = {
-      emit: (type, data) => {
-        expect(type).toBe('log');
-        expect(typeof data).toBe('object');
-        done();
-      },
-    };
 
-    router.handle(request, response);
+    test('POST JSON', (done) => {
+      request.body = '{"decs": "JSON data"}';
+      global.socket = {
+        emit: (type, data) => {
+          expect(type).toBe('log');
+          expect(typeof data).toBe('object');
+          done();
+        },
+      };
+
+      router.handle(request, response);
+    });
+
+    test('POST plain text', (done) => {
+      request.headers['content-type'] = 'text';
+      response.send = () => done();
+
+      router.handle(request, response);
+    });
   });
 });
