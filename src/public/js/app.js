@@ -3,6 +3,9 @@ const socket = io.connect();
 const streamId = window.location.pathname.substring(1);
 let autoScrool = true;
 
+// Init sentry, for capturing frontend errors.
+Raven.config(sentryDSN).install();
+
 /**
  * Gets element with log message data.
  *

@@ -58,6 +58,11 @@ html(lang="en")
       table
         tr
           td
+            span.date Nov 16, 2017
+          td.nw
+            | Added sentry error monitoring.
+        tr
+          td
             span.date Oct 10, 2017
           td.nw
             | Added unit tests and coverage report 😎.
@@ -98,6 +103,9 @@ html(lang="en")
             | Init project 🎬. Project deployed on heroku and available by url: realtimelog.herokuapp.com
 
     #root
+    script.
+      sentryDSN = "#{sentryDSN}";
     script(type='text/javascript', src=socketIoJs)
+    script(type='text/javascript', src='//cdn.ravenjs.com/3.20.0/raven.min.js' crossorigin='anonymous')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')
     script(type='text/javascript', src='/js/app.js')

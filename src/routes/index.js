@@ -26,6 +26,7 @@ router.get('/:streamId?', (req, res) => {
     port: global.APP_PORT_FOR_HELP_BLOCK,
     socketIoJs: global.APP_SOCKET_IO_JS,
     streamId: req.params.streamId,
+    sentryDSN: global.SENTRY_DSN_FRONTEND,
   });
 });
 
