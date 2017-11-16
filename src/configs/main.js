@@ -10,3 +10,5 @@ global.APP_SOCKET_IO_JS = `${process.env.ENV === 'prod' ? global.APP_HOST : ''}/
 
 global.SENTRY_DSN_FRONTEND = process.env.SENTRY_DSN_FRONTEND;
 global.SENTRY_DSN_BACKEND = process.env.SENTRY_DSN_BACKEND;
+
+global.GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID;

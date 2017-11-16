@@ -27,6 +27,7 @@ router.get('/:streamId?', (req, res) => {
     socketIoJs: global.APP_SOCKET_IO_JS,
     streamId: req.params.streamId,
     sentryDSN: global.SENTRY_DSN_FRONTEND,
+    googleAnalyticsId: global.GOOGLE_ANALYTICS_ID,
   });
 });
 

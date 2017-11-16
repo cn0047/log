@@ -15,6 +15,7 @@ const routes = require('./routes/index');
 // Init app.
 const app = express();
 // Init sentry, for capturing backend errors.
+// @see https://sentry.io/log/
 raven.config(global.SENTRY_DSN_BACKEND).install();
 
 // Configure app.
