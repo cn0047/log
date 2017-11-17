@@ -4,10 +4,9 @@ const app = {
 
 /**
  * Init sentry, for capturing frontend errors.
- *
- * global: Raven
- * global: sentryDSN
  */
+/** global: Raven */
+/** global: sentryDSN */
 Raven.config(sentryDSN).install();
 
 // Enable autoScrool by default.

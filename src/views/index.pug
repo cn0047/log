@@ -123,3 +123,6 @@ html(lang="en")
         }
         gtag('js', new Date());
         gtag('config', '#{googleAnalyticsId}');
+        // Temporary added tracking "streamIdMismatch" metric, just to test does it work...
+        gtag('config', '#{googleAnalyticsId}', {'custom_map': {'metric1': 'streamIdMismatch'}});
+        gtag('event', 'streamIdMismatchCount', {'streamIdMismatch': 1});
