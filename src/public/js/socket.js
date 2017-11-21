@@ -17,11 +17,16 @@ socket.on('connect', () => {
  * @event LOG.NEW
  */
 socket.on('log', (data) => {
+  /** global: gtag */
+  gtag('event', 'got_new_log', {'count': 1});
+
   // It is only way to render proper data because socket.io rooms disabled here
   // @see https://github.com/cn007b/log/blob/master/src/routes/index.js#L49
   if (data.streamId !== streamId) {
+    gtag('event', 'stream_id_mismatch', {'streamIdMismatch': 1});
     return;
   }
+
   if (data.format === 'json') {
     /** global: app */
     renderJson(data, app.autoScrool);
