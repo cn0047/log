@@ -16,4 +16,6 @@ app.autoScrool = true;
 
 // Disable Google Analytics tracking function for DEV environment.
 // With the purpose don't break other places - here just define mock.
-gtag = gtag || new Function();
+if (typeof gtag === 'undefined') {
+  window.gtag = () => {};
+}
