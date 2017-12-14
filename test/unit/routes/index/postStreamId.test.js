@@ -2,18 +2,19 @@
 
 const router = require('./../../../../src/routes/index');
 
-describe('Index routes.', () => {
-  const request = {
-    method: 'POST',
-    url: '/testId',
-    headers: {},
-    connection: {
-      socket: { remoteAddress: 'testIp' },
-    },
-    socket: {},
-    body: '',
-  };
+// Request common for all test cases.
+const request = {
+  method: 'POST',
+  url: '/testId',
+  headers: {},
+  connection: {
+    socket: { remoteAddress: 'testIp' },
+  },
+  socket: {},
+  body: '',
+};
 
+describe('Index routes.', () => {
   test('POST plain text into page with certain streamId', (done) => {
     request.headers = { 'x-forwarded-for': 'testIp', 'content-type': 'text/plain' };
     request.body = 'Test with plain text body.';
