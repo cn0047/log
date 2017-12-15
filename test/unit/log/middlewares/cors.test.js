@@ -1,4 +1,4 @@
-const cors = require('./../../../src/middlewares/cors');
+const cors = require('./../../../../src/middlewares/cors');
 
 describe('CORS middleware.', () => {
   test('Main test', () => {

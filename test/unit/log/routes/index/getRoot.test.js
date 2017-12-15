@@ -1,6 +1,6 @@
 /** global: jest */
 
-const router = require('./../../../../src/routes/index');
+const router = require('./../../../../../src/routes/index');
 
 describe('Index routes.', () => {
   test('GET homepage', (done) => {
