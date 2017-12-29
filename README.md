@@ -5,7 +5,6 @@ This is simple REAL-TIME log.
 [![Coverage Status](https://coveralls.io/repos/github/cn007b/log/badge.svg?branch=master)](https://coveralls.io/github/cn007b/log?branch=master)
 [![bitHound Code](https://www.bithound.io/github/cn007b/log/badges/code.svg)](https://www.bithound.io/github/cn007b/log)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1b5adb99d453499e88aa9e4b7314e979)](https://www.codacy.com/app/cn007b/log?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cn007b/log&amp;utm_campaign=Badge_Grade)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/d947a4c8-b9a3-4ab2-a81f-376dc1334bbc/mini.png)](https://insight.sensiolabs.com/projects/d947a4c8-b9a3-4ab2-a81f-376dc1334bbc)
 [<img src="https://heroku-badge.herokuapp.com/?app=heroku-badge">](https://realtimelog.herokuapp.com/)
 
 Just open main [page](https://realtimelog.herokuapp.com)
