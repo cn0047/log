@@ -29,7 +29,9 @@
     "start": "node src/index.js",
     "dev": "node_modules/.bin/nodemon src/",
     "lint": "node_modules/.bin/eslint src/",
-    "test": "node_modules/.bin/jest --forceExit",
+    "test": "npm run utest && npm run ftest",
+    "utest": "node_modules/.bin/jest --forceExit",
+    "ftest": "jmeter -n -t test/functional/jmeter/* -l /tmp/jmeter.result -j /tmp/jmeter.log -Jhost=localhost -Jport=3001",
     "nspcheck": "node_modules/.bin/nsp check"
   },
   "eslintConfig": {
