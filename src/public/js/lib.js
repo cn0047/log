@@ -8,7 +8,7 @@ const lib = {};
  *
  * @param {String} data Log message data.
  */
-lib.getCodeElement = function (data) {
+lib.getCodeElement = (data) => {
   const c = document.createElement('code');
   c.className = 'code blink hljs json';
   c.innerHTML = JSON.stringify(data, null, "\t"); // eslint-disable-line
@@ -26,7 +26,7 @@ lib.getCodeElement = function (data) {
  *
  * @param {String} ip Ip address.
  */
-lib.getIpElement = function (ip) {
+lib.getIpElement = (ip) => {
   const s = document.createElement('span');
   s.className = 'ip';
   s.innerHTML = ip;
@@ -37,7 +37,7 @@ lib.getIpElement = function (ip) {
 /**
  * Gets element with current date.
  */
-lib.getDateElement = function () {
+lib.getDateElement = () => {
   const s = document.createElement('span');
   s.className = 'date';
   s.innerHTML = (new Date()).toLocaleDateString(
@@ -53,7 +53,7 @@ lib.getDateElement = function () {
  *
  * @param {Object} data LOG.NEW payload.
  */
-lib.getTags = function (data) {
+lib.getTags = (data) => {
   const d = document.createElement('div');
   d.className = 'tags';
   d.appendChild(lib.getDateElement());
@@ -70,7 +70,7 @@ lib.getTags = function (data) {
  * @param {Object} data LOG.NEW payload.
  * @param {Boolean} autoScrool In case of enabled autoScrool - scroll window.
  */
-function renderJson(data, autoScrool) {
+const renderJson = (data, autoScrool) => {
   const p = document.createElement('p');
   p.appendChild(lib.getTags(data));
   p.appendChild(lib.getCodeElement(data.data));
