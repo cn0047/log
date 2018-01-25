@@ -1,0 +1,1 @@
+require('../s/main.css');
