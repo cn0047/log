@@ -1,4 +1,4 @@
-const xPoweredBy = require('./../../../../src/middlewares/xPoweredBy');
+const xPoweredBy = require('./../../../../src/back/middlewares/xPoweredBy');
 
 describe('X-Powered-By middleware.', () => {
   test('Main test', () => {

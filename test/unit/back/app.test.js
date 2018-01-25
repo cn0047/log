@@ -1,4 +1,4 @@
-const app = require('./../../../src/app');
+const app = require('./../../../src/back/app');
 
 describe('App bootstrap.', () => {
   test('Main test', () => {

@@ -20,8 +20,8 @@ raven.config(global.SENTRY_DSN_BACKEND).install();
 
 // Configure app.
 app.use(raven.requestHandler());
-app.use(express.static('./src/public'));
-app.set('views', './src/views');
+app.use(express.static('./public'));
+app.set('views', './src/back/views');
 app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

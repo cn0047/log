@@ -4,7 +4,7 @@
   "private": false,
   "author": "Vladimir Kovpak",
   "license": "MIT",
-  "main": " src/index.js",
+  "main": " src/back/index.js",
   "engines": {
     "node": "8.5.0"
   },
@@ -17,20 +17,25 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
+    "css-loader": "^0.28.9",
     "eslint": "^4.11.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "jest": "^21.2.1",
     "nodemon": "^1.11.0",
     "nsp": "^3.1.0",
-    "supertest": "^3.0.0"
+    "style-loader": "^0.19.1",
+    "supertest": "^3.0.0",
+    "webpack": "^3.10.0"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "node_modules/.bin/nodemon src/",
-    "lint": "node_modules/.bin/eslint src/",
-    "test": "npm run utest",
-    "utest": "node_modules/.bin/jest --forceExit",
+    "start": "node src/back/index.js",
+    "build:front": "node_modules/.bin/webpack -p",
+    "dev": "node_modules/.bin/nodemon src/back/",
+    "lint:back": "node_modules/.bin/eslint src/back/",
+    "test": "npm run utest:back",
+    "utest:back": "node_modules/.bin/jest --forceExit",
     "ftest": "jmeter -n -t test/functional/jmeter/* -l /tmp/jmeter.result -j /tmp/jmeter.log -Jhost=localhost -Jport=3001",
     "nspcheck": "node_modules/.bin/nsp check"
   },
@@ -50,7 +55,8 @@
     ]
   },
   "eslintIgnore": [
-    "src/public/*"
+    "public/*",
+    "src/front/*"
   ],
   "jest": {
     "collectCoverage": true,

@@ -2,7 +2,7 @@
 
 const jsonRequest = require('./../../../stubs/routes/jsonRequest');
 const plainRequest = require('./../../../stubs/routes/plainRequest');
-const router = require('./../../../../../src/routes/index');
+const router = require('./../../../../../src/back/routes/index');
 
 describe('Index routes.', () => {
   test('POST plain text into page with certain streamId', (done) => {
