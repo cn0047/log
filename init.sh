@@ -7,7 +7,7 @@ if [ ! -f ./.inited ]; then
 
     mv node_modules _node_modules
 
-    npm install
+    npm install --only=dev
     npm run build:front
 
     rm -rf node_modules
