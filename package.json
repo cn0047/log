@@ -44,7 +44,8 @@
     "utest:back": "node_modules/.bin/jest --forceExit",
     "ftest": "jmeter -n -t test/functional/jmeter/* -l /tmp/jmeter.result -j /tmp/jmeter.log -Jhost=localhost -Jport=3001",
     "nspcheck": "node_modules/.bin/nsp check",
-    "build:front": "node_modules/.bin/webpack -p"
+    "build:front": "node_modules/.bin/webpack -p",
+    "heroku-postbuild": "./init.sh"
   },
   "eslintConfig": {
     "env": {
