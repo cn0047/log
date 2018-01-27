@@ -1,14 +1,9 @@
 /**
- * This variable is holder for all private functions.
- */
-const lib = {};
-
-/**
  * Gets element with log message data.
  *
  * @param {String} data Log message data.
  */
-lib.getCodeElement = (data) => {
+const getCodeElement = (data) => {
   const c = document.createElement('code');
   c.className = 'code blink hljs json';
   c.innerHTML = JSON.stringify(data, null, "\t"); // eslint-disable-line
@@ -26,7 +21,7 @@ lib.getCodeElement = (data) => {
  *
  * @param {String} ip Ip address.
  */
-lib.getIpElement = (ip) => {
+const getIpElement = (ip) => {
   const s = document.createElement('span');
   s.className = 'ip';
   s.innerHTML = ip;
@@ -37,7 +32,7 @@ lib.getIpElement = (ip) => {
 /**
  * Gets element with current date.
  */
-lib.getDateElement = () => {
+const getDateElement = () => {
   const s = document.createElement('span');
   s.className = 'date';
   s.innerHTML = (new Date()).toLocaleDateString(
@@ -53,11 +48,11 @@ lib.getDateElement = () => {
  *
  * @param {Object} data LOG.NEW payload.
  */
-lib.getTags = (data) => {
+const getTags = (data) => {
   const d = document.createElement('div');
   d.className = 'tags';
-  d.appendChild(lib.getDateElement());
-  d.appendChild(lib.getIpElement(data.ip));
+  d.appendChild(getDateElement());
+  d.appendChild(getIpElement(data.ip));
 
   return d;
 };
@@ -72,11 +67,13 @@ lib.getTags = (data) => {
  */
 const renderJson = (data, autoScrool) => {
   const p = document.createElement('p');
-  p.appendChild(lib.getTags(data));
-  p.appendChild(lib.getCodeElement(data.data));
+  p.appendChild(getTags(data));
+  p.appendChild(getCodeElement(data.data));
   document.getElementById('root').appendChild(p);
 
   if (autoScrool === true) {
     window.scrollTo(0, document.body.scrollHeight);
   }
-}
+};
+
+module.exports = renderJson;

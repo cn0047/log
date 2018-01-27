@@ -103,8 +103,6 @@ html(lang="en")
             | Init project 🎬. Project deployed on heroku and available by url: realtimelog.herokuapp.com
 
     #root
-    script.
-      sentryDSN = "#{sentryDSN}";
 
     if googleAnalyticsId
       script(async='', src='https://www.googletagmanager.com/gtag/js?id='+googleAnalyticsId)
@@ -115,11 +113,11 @@ html(lang="en")
         }
         gtag('js', new Date());
         gtag('config', '#{googleAnalyticsId}');
-        // Temporary added tracking "streamIdMismatch" metric, just to test does it work...
-        gtag('config', '#{googleAnalyticsId}', {'custom_map': {'metric1': 'streamIdMismatch'}});
-        gtag('event', 'streamIdMismatchCount', {'streamIdMismatch': 1});
 
     script(type='text/javascript', src=socketIoJs)
     script(type='text/javascript', src='//cdn.ravenjs.com/3.20.0/raven.min.js' crossorigin='anonymous')
+    script.
+      sentryDSN = "#{sentryDSN}";
+      Raven.config(sentryDSN).install();
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')
     script(type='text/javascript', src='/bundle.js')

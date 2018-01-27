@@ -1,3 +1,5 @@
+const app = require('./app');
+
 /**
  * Handler for menu "news" link, which is open menu block.
  */

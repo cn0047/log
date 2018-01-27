@@ -40,9 +40,10 @@
     "build": "npm run build:front",
     "build:front": "node_modules/.bin/webpack -p",
     "start": "node src/back/index.js",
+    "dev": "npm run dev:back",
     "dev:back": "node_modules/.bin/nodemon src/back/",
     "dev:front": "node_modules/.bin/webpack-dev-server --watch-poll",
-    "lint:back": "node_modules/.bin/eslint src/back/",
+    "lint": "node_modules/.bin/eslint src/",
     "test": "npm run utest:back",
     "utest:back": "node_modules/.bin/jest --forceExit",
     "ftest": "jmeter -n -t test/functional/jmeter/* -l /tmp/jmeter.result -j /tmp/jmeter.log -Jhost=localhost -Jport=3001",
@@ -66,8 +67,7 @@
     ]
   },
   "eslintIgnore": [
-    "public/*",
-    "src/front/*"
+    "public/*"
   ],
   "jest": {
     "collectCoverage": true,
