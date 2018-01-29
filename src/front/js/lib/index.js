@@ -63,15 +63,15 @@ const getTags = (data) => {
  * @access public
  *
  * @param {Object} data LOG.NEW payload.
- * @param {Boolean} autoScrool In case of enabled autoScrool - scroll window.
+ * @param {Boolean} autoScroll In case of enabled autoScrool - scroll window.
  */
-const renderJson = (data, autoScrool) => {
+const renderJson = (data, autoScroll) => {
   const p = document.createElement('p');
   p.appendChild(getTags(data));
   p.appendChild(getCodeElement(data.data));
   document.getElementById('root').appendChild(p);
 
-  if (autoScrool === true) {
+  if (autoScroll === true) {
     window.scrollTo(0, document.body.scrollHeight);
   }
 };

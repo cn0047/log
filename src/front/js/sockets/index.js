@@ -1,16 +1,16 @@
-const app = require('./app');
-const renderJson = require('./lib');
+const io = require('socket.io-client');
 
-/** global: io */
+const app = require('./../app');
+const renderJson = require('./../lib');
+
 const socket = io.connect();
-const streamId = window.location.pathname.substring(1);
 
 /**
  * Handler for WebSocket 'connect' event.
  * Emits 'join' event which is intended to join WebSocket room for current streamId.
  */
 socket.on('connect', () => {
-  socket.emit('join', streamId);
+  socket.emit('join', app.getStreamId());
 });
 
 /**
@@ -22,12 +22,12 @@ socket.on('connect', () => {
 socket.on('log', (data) => {
   // It is only way to render proper data because socket.io rooms disabled here
   // @see https://github.com/cn007b/log/blob/master/src/routes/index.js#L49
-  if (data.streamId !== streamId) {
+  if (data.streamId !== app.getStreamId()) {
     return;
   }
 
   if (data.format === 'json') {
     /** global: app */
-    renderJson(data, app.autoScrool);
+    renderJson(data, app.getAutoScroll());
   }
 });

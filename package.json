@@ -1,6 +1,6 @@
 {
   "name": "RealTimeLog",
-  "version": "1.3.1",
+  "version": "1.4.1",
   "private": false,
   "author": "Vladimir Kovpak",
   "license": "MIT",
@@ -21,6 +21,7 @@
     "pug": "^2.0.0-rc.2",
     "raven": "^2.2.1",
     "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0"
   },
@@ -59,7 +60,6 @@
     },
     "globals": {
       "window": true,
-      "io": true,
       "hljs": true
     },
     "extends": [

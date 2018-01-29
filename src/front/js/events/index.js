@@ -1,4 +1,4 @@
-const app = require('./app');
+const app = require('./../app');
 
 /**
  * Handler for menu "news" link, which is open menu block.
@@ -18,8 +18,5 @@ document.getElementById('close').addEventListener('click', (e) => {
  * Auto-scrolling to latest data.
  */
 window.addEventListener('onscroll', () => {
-  /** global: app */
-  app.autoScrool = (
-    (window.innerHeight + window.scrollY) >= document.body.offsetHeight
-  );
+  app.setAutoScroll((window.innerHeight + window.scrollY) >= document.body.offsetHeight);
 });
