@@ -1,7 +1,7 @@
 const io = require('socket.io-client');
 
 const app = require('./../app');
-const renderJson = require('./../lib');
+const renderJson = require('./../services/renderJson');
 
 const socket = io.connect();
 

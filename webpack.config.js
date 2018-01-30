@@ -7,7 +7,7 @@ module.exports = {
     './src/front/js/app.js',
     './src/front/js/configs/main.js',
     './src/front/js/events/index.js',
-    './src/front/js/lib/index.js',
+    './src/front/js/services/renderJson.js',
     './src/front/js/sockets/index.js',
   ],
   output: {
