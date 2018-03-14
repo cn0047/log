@@ -39,7 +39,7 @@ html(lang="en")
               $ch = curl_init();
               curl_setopt($ch, CURLOPT_URL, '#{host}:#{port}/#{streamId}');
               curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-              curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['code' => 200]));
+              curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['code' => 200, 'status' => 'OK']));
               curl_exec($ch);
             pre.codeExample.
               // OR
