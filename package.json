@@ -1,6 +1,6 @@
 {
   "name": "RealTimeLog",
-  "version": "1.4.2",
+  "version": "1.5.2",
   "private": false,
   "author": "Vladimir Kovpak",
   "license": "MIT",
@@ -39,8 +39,7 @@
   },
   "scripts": {
     "postinstall": "npm run build",
-    "w": "node_modules/.bin/webpack-cli",
-    "build": "npm run build:front",
+    "build": "echo 'bithound.io sorry 🙈' && npm i webpack-cli && npm run build:front",
     "build:front": "node_modules/.bin/webpack -p",
     "start": "node src/back/index.js",
     "dev": "npm run dev:back",
