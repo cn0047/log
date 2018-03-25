@@ -13,7 +13,7 @@ obtain your unique `streamId` (you will be redirected)
 or open certain stream (specify `streamId` in url like: `https://realtimelog.herokuapp.com/test`)
 and start listen you real time logs!!!
 
-Under the hood, this log works with web sockets so you will see logs immediately in your browser!
+Under the hood, this log works with `WebSockets` so you will see logs immediately in your browser!
 
 With the purpose to post something in your log stream use any code from examples below.
 

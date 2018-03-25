@@ -22,19 +22,20 @@
     "raven": "^2.2.1",
     "socket.io": "^2.0.4",
     "socket.io-client": "^2.0.4",
-    "style-loader": "^0.19.1",
-    "webpack": "^3.10.0"
+    "style-loader": "^0.20.3",
+    "webpack": "^4.2.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
     "eslint": "^4.11.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "jest": "^21.2.1",
+    "jest": "^22.4.3",
     "nodemon": "^1.11.0",
     "nsp": "^3.1.0",
     "supertest": "^3.0.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^3.1.1",
+    "npm-check-updates": "^2.14.1"
   },
   "scripts": {
     "postinstall": "npm run build",
@@ -49,6 +50,7 @@
     "utest:back": "node_modules/.bin/jest --forceExit",
     "ftest": "jmeter -n -t test/functional/jmeter/* -l /tmp/jmeter.result -j /tmp/jmeter.log -Jhost=localhost -Jport=3001",
     "nspcheck": "node_modules/.bin/nsp check",
+    "ncu": "node_modules/.bin/npm-check-updates -u",
     "heroku-prebuild": "",
     "heroku-postbuild": ""
   },
