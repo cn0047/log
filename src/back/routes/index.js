@@ -1,6 +1,8 @@
 const express = require('express');
 
-const router = express.Router();
+const request = require('./../services/request');
+
+const router = new express.Router({});
 
 /**
  * Homepage route, which will redirect to page with random stream id.
@@ -41,10 +43,7 @@ router.get('/:streamId?', (req, res) => {
  */
 router.post('/:streamId?', (req, res) => {
   // Capture message sender ip address as additional information.
-  const ip = req.headers['x-forwarded-for']
-    || req.connection.remoteAddress
-    || req.socket.remoteAddress
-    || req.connection.socket.remoteAddress;
+  const ip = request.getIp(req);
 
   // Emit WebSocket event.
   if (req.headers['content-type'] === 'application/json') {

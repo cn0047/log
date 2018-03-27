@@ -7,6 +7,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const raven = require('raven');
+const pug = require('pug');
 
 const cors = require('./middlewares/cors');
 const xPoweredBy = require('./middlewares/xPoweredBy');
@@ -22,7 +23,7 @@ raven.config(global.SENTRY_DSN_BACKEND).install();
 app.use(raven.requestHandler());
 app.use(express.static('./public'));
 app.set('views', './src/back/views');
-app.set('view engine', 'pug');
+app.set('view engine', pug.name);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors);

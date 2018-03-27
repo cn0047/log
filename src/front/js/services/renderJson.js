@@ -6,7 +6,7 @@
 const getCodeElement = (data) => {
   const c = document.createElement('code');
   c.className = 'code blink hljs json';
-  c.innerHTML = JSON.stringify(data, null, "\t"); // eslint-disable-line
+  c.textContent = JSON.stringify(data, null, "\t"); // eslint-disable-line
   /** global: hljs */
   hljs.highlightBlock(c);
 
@@ -24,7 +24,7 @@ const getCodeElement = (data) => {
 const getIpElement = (ip) => {
   const s = document.createElement('span');
   s.className = 'ip';
-  s.innerHTML = ip;
+  s.textContent = ip;
 
   return s;
 };
@@ -35,7 +35,7 @@ const getIpElement = (ip) => {
 const getDateElement = () => {
   const s = document.createElement('span');
   s.className = 'date';
-  s.innerHTML = (new Date()).toLocaleDateString(
+  s.textContent = (new Date()).toLocaleDateString(
     'en-GB',
     { hour: '2-digit', minute: '2-digit', second: '2-digit' },
   );
