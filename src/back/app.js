@@ -23,7 +23,7 @@ raven.config(global.SENTRY_DSN_BACKEND).install();
 app.use(raven.requestHandler());
 app.use(express.static('./public'));
 app.set('views', './src/back/views');
-app.set('view engine', pug.name);
+app.set('view engine', pug.name.toLowerCase());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors);
