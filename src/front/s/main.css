@@ -27,10 +27,10 @@ p {
   text-decoration: blink;
   color: seagreen;
 }
-#nav span {
+#nav div {
   margin-right: 9px;
 }
-#nav .dropdown, span {
+#nav .dropdown, div {
   cursor: pointer;
 }
 #news {
@@ -69,7 +69,7 @@ p {
   width: calc(100% - 90px);
 }
 .codeExample {
-  background-color: gainsboro;
+  background-color: #efefef;
   font-size: 11px;
 }
 .nw {
@@ -87,7 +87,7 @@ p {
   box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2);
   z-index: 1;
 }
-.dropdown-content span {
+.dropdown-content div {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -119,4 +119,16 @@ p {
 }
 @keyframes example {
   0% {background-color: lightyellow;}
+}
+
+
+
+.purple {
+  color: #a535ae;
+}
+.green {
+  color: #00a33f;
+}
+.orange {
+  color: #ff5600;
 }

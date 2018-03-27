@@ -54,6 +54,6 @@ exec("curl -s https://realtimelog.herokuapp.com/test -H 'Content-Type: applicati
 Bash:
 
 ````bash
-curl -XPOST https://realtimelog.herokuapp.com/test \
+curl -XPOST 'https://realtimelog.herokuapp.com/test' \
 -H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
 ````
