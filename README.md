@@ -20,7 +20,7 @@ With the purpose to post something in your log stream use any code from examples
 JavaScript:
 
 ````javascript
-fetch('https://realtimelog.herokuapp.com:443/test', {
+fetch('https://realtimelog.herokuapp.com/test', {
   method: 'post', headers: {'Content-Type': 'application/json'},
   body: JSON.stringify({code: 200, status: 'OK'})
 });
@@ -39,6 +39,18 @@ r.write(JSON.stringify({code: 200, status: 'OK'}));
 r.end();
 ````
 
+GO:
+
+````go
+import (
+  "bytes"
+  "encoding/json"
+  "net/http"
+)
+j, _ := json.Marshal(map[string]string{"code": "200", "status": "ok"})
+http.Post("https://realtimelog.herokuapp.com/test", "application/json", bytes.NewBuffer(j))
+````
+
 PHP:
 
 ````php
@@ -55,5 +67,5 @@ Bash:
 
 ````bash
 curl -XPOST 'https://realtimelog.herokuapp.com/test' \
--H 'Content-Type: application/json' -d '{"code":"200", "status": "OK"}'
+-H 'Content-Type: application/json' -d '{"code": 200, "status": "OK"}'
 ````

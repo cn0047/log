@@ -2,4 +2,4 @@
 node_modules
 public/bundle.js
 public/main.css
-
+newrelic_agent.log

@@ -33,6 +33,16 @@ html(lang="en")
               });
               r.write(JSON.stringify({code: 200, status: #[span.green 'OK']}));
               r.end();
+            | GO:
+            br
+            pre.codeExample.
+              import (
+                #[span.green "bytes"]
+                #[span.green "encoding/json"]
+                #[span.green "net/http"]
+              )
+              j, _ := json.Marshal(map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
+              http.Post(#[span.green "https://realtimelog.herokuapp.com/test"], #[span.green "application/json"], bytes.NewBuffer(j))
             | PHP:
             br
             pre.codeExample.
@@ -59,7 +69,7 @@ html(lang="en")
           td
             span.date Mar, 2018
           td.nw
-            | Added code highlight into help section. Added new-relic support.
+            | Added code highlight into help section. Added new-relic support. Added GOlang example.
         tr
           td
             span.date Nov 16, 2017
