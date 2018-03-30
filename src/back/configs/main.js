@@ -12,3 +12,7 @@ global.SENTRY_DSN_FRONTEND = process.env.SENTRY_DSN_FRONTEND;
 global.SENTRY_DSN_BACKEND = process.env.SENTRY_DSN_BACKEND;
 
 global.GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID;
+
+global.NEW_RELIC_APP_NAME = `log-${process.env.PORT}`;
+global.NEW_RELIC_LOGGING_LEVEL = 'info';
+global.NEW_RELIC_LICENSE_KEY = process.env.NEW_RELIC_LICENSE_KEY;

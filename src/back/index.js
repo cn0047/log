@@ -5,6 +5,8 @@
  */
 
 require('./configs/main');
+require('newrelic');
+
 const app = require('./app');
 const ws = require('./ws');
 
