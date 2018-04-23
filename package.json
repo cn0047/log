@@ -2,7 +2,7 @@
   "name": "RealTimeLog",
   "version": "1.5.3",
   "private": false,
-  "author": "Vladimir Kovpak",
+  "author": "Vladimir Kovpak <cn007b@gmail.com>",
   "license": "MIT",
   "main": " src/back/index.js",
   "engines": {
