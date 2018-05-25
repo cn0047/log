@@ -21,7 +21,7 @@ socket.on('connect', () => {
  */
 socket.on('log', (data) => {
   // It is only way to render proper data because socket.io rooms disabled here
-  // @see https://github.com/cn007b/log/blob/master/src/routes/index.js#L49
+  // @see https://github.com/cn007b/log/blob/master/src/back/routes/index.js:52
   if (data.streamId !== app.getStreamId()) {
     return;
   }
