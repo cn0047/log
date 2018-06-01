@@ -1,4 +1,5 @@
 const io = require('socket.io-client');
+const isObject = require('is-it-object');
 
 const app = require('./../app');
 const renderJson = require('./../services/renderJson');
@@ -20,6 +21,10 @@ socket.on('connect', () => {
  * @event LOG.NEW
  */
 socket.on('log', (data) => {
+  if (!isObject(data)) {
+    return;
+  }
+
   // It is only way to render proper data because socket.io rooms disabled here
   // @see https://github.com/cn007b/log/blob/master/src/back/routes/index.js:52
   if (data.streamId !== app.getStreamId()) {
