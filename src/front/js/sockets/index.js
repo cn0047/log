@@ -21,7 +21,7 @@ socket.on('connect', () => {
  * @event LOG.NEW
  */
 socket.on('log', (data) => {
-  if (!isObject(data)) {
+  if (isObject(data) === false) {
     return;
   }
 
