@@ -6,7 +6,6 @@ This is simple REAL-TIME log.
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1b5adb99d453499e88aa9e4b7314e979)](https://www.codacy.com/app/cn007b/log?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cn007b/log&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e1b69241abdf0aa0b4cf/maintainability)](https://codeclimate.com/github/cn007b/log/maintainability)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[<img src="https://heroku-badge.herokuapp.com/?app=heroku-badge">](https://realtimelog.herokuapp.com/)
 
 Just open main [page](https://realtimelog.herokuapp.com)
 obtain your unique `streamId` (you will be redirected)
