@@ -2,6 +2,7 @@ const io = require('socket.io-client');
 const isObject = require('is-it-object');
 
 const app = require('./../app');
+const counter = require('./../services/counter');
 const renderJson = require('./../services/renderJson');
 
 const socket = io.connect();
@@ -34,5 +35,6 @@ socket.on('log', (data) => {
   if (data.format === 'json') {
     /** global: app */
     renderJson(data, app.getAutoScroll());
+    counter.inc();
   }
 });

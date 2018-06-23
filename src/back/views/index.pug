@@ -68,6 +68,11 @@ html(lang="en")
       table
         tr
           td
+            span.date Jun, 2018
+          td.nw
+            | Added counter block which shows count of received messages.
+        tr
+          td
             span.date Mar, 2018
           td.nw
             | Added code highlight into help section. Added new-relic support. Added GOlang example.
@@ -118,6 +123,11 @@ html(lang="en")
             | Init project 🎬. Project deployed on heroku and available by url: realtimelog.herokuapp.com
 
     #root
+
+    #counterBlock.rightcenter.hide
+      span#counter 0
+      span#counterPrecise 0
+
 
     if googleAnalyticsId
       script(async='', src='https://www.googletagmanager.com/gtag/js?id='+googleAnalyticsId)

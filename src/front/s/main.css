@@ -98,6 +98,17 @@ p {
 .pull-right {
   float: right;
 }
+.rightcenter {
+  bottom: 0;
+  height: 40px;
+  margin: auto;
+  overflow: auto;
+  padding-right: 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 35px;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -131,4 +142,25 @@ p {
 }
 .orange {
   color: #ff5600;
+}
+
+
+
+#counter {
+  color: #62b730;
+  display: inline-block;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right;
+  width: 100%;
+}
+#counterPrecise {
+  color: dimgray;
+  display: inline-block;
+  float: right;
+  font-size: 10px;
+  height: 10px;
+  text-align: right;
+  width: 100%;
 }
