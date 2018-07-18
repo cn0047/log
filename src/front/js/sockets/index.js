@@ -4,6 +4,7 @@ const isObject = require('is-it-object');
 const app = require('./../app');
 const counter = require('./../services/counter');
 const renderJson = require('./../services/renderJson');
+const { trackEventLogNew } = require('./../services/googleAnalytics');
 
 const socket = io.connect();
 
@@ -36,5 +37,6 @@ socket.on('log', (data) => {
     /** global: app */
     renderJson(data, app.getAutoScroll());
     counter.inc();
+    trackEventLogNew();
   }
 });
