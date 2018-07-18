@@ -1,6 +1,6 @@
 {
   "name": "RealTimeLog",
-  "version": "1.5.3",
+  "version": "1.7.1",
   "private": false,
   "author": "Vladimir Kovpak <cn007b@gmail.com>",
   "license": "MIT",
@@ -52,7 +52,7 @@
     "utest:back": "node_modules/.bin/jest --forceExit",
     "ftest": "jmeter -n -t test/functional/jmeter/* -l /tmp/jmeter.result -j /tmp/jmeter.log -Jhost=localhost -Jport=3001",
     "nspcheck": "node_modules/.bin/nsp check",
-    "ncu": "node_modules/.bin/npm-check-updates -u",
+    "ncu": "npm i -D npm-check-updates && node_modules/.bin/npm-check-updates -u",
     "heroku-prebuild": "",
     "heroku-postbuild": ""
   },
