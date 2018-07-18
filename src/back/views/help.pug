@@ -1,0 +1,46 @@
+| With the purpose to post something in this stream use any code from examples below.
+br
+br
+| JavaScript:
+br
+pre.codeExample.
+    fetch(#[span.green '#{host}:#{port}/#{streamId}'], {
+      method: #[span.green 'post'], headers: {#[span.green 'Content-Type']: #[span.green 'application/json']},
+      body: JSON.stringify({code: 200, status: #[span.green 'OK']})
+    });
+| NodeJS:
+br
+pre.codeExample.
+    #[span.orange const] r #[span.orange =] require(#[span.green 'https']).request({
+      host: #[span.green '#{hostName}'],
+    path: #[span.green '/#{streamId}'],
+    method: #[span.green 'POST'],
+    headers: {#[span.green 'Content-Type']: #[span.green 'application/json']}
+    });
+    r.write(JSON.stringify({code: 200, status: #[span.green 'OK']}));
+    r.end();
+| GO:
+br
+pre.codeExample.
+    import (
+      #[span.green "bytes"]
+      #[span.green "encoding/json"]
+      #[span.green "net/http"]
+    )
+    j, _ := json.Marshal(map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
+    http.Post(#[span.green "https://realtimelog.herokuapp.com/test"], #[span.green "application/json"], bytes.NewBuffer(j))
+| PHP:
+br
+pre.codeExample.
+    $ch #[span.orange =] #[span.purple curl_init]();
+    #[span.purple curl_setopt]($ch, CURLOPT_URL, #[span.green '#{host}:#{port}/#{streamId}']);
+    #[span.purple curl_setopt]($ch, CURLOPT_HTTPHEADER, [#[span.green 'Content-Type: application/json']]);
+    #[span.purple curl_setopt]($ch, CURLOPT_POSTFIELDS, #[span.purple json_encode]([#[span.green 'code'] #[span.orange =>] 200, #[span.green 'status'] #[span.orange =>] #[span.green 'OK']]));
+    #[span.purple curl_exec]($ch);
+    // OR
+    #[span.purple exec](#[span.green "curl -s #{host}:#{port}/#{streamId} -H 'Content-Type: application/json' -d '"].#[span.purple json_encode]([#[span.green 'code'] #[span.orange =>] 200]).#[span.green "'"]);
+| Bash:
+br
+pre.codeExample.
+    curl -XPOST #[span.green '#{host}:#{port}/#{streamId}'] \
+    -H #[span.green 'Content-Type: application/json'] -d #[span.green '{"code":"200", "status": "OK"}']

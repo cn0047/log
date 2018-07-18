@@ -13,121 +13,20 @@ html(lang="en")
         div.dropbtn Help
         .dropdown-content
           div
-            | With the purpose to post something in this stream use any code from examples below.
-            br
-            br
-            | JavaScript:
-            br
-            pre.codeExample.
-              fetch(#[span.green '#{host}:#{port}/#{streamId}'], {
-                method: #[span.green 'post'], headers: {#[span.green 'Content-Type']: #[span.green 'application/json']},
-                body: JSON.stringify({code: 200, status: #[span.green 'OK']})
-              });
-            | NodeJS:
-            br
-            pre.codeExample.
-              #[span.orange const] r #[span.orange =] require(#[span.green 'https']).request({
-                host: #[span.green '#{hostName}'],
-                path: #[span.green '/#{streamId}'],
-                method: #[span.green 'POST'],
-                headers: {#[span.green 'Content-Type']: #[span.green 'application/json']}
-              });
-              r.write(JSON.stringify({code: 200, status: #[span.green 'OK']}));
-              r.end();
-            | GO:
-            br
-            pre.codeExample.
-              import (
-                #[span.green "bytes"]
-                #[span.green "encoding/json"]
-                #[span.green "net/http"]
-              )
-              j, _ := json.Marshal(map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
-              http.Post(#[span.green "https://realtimelog.herokuapp.com/test"], #[span.green "application/json"], bytes.NewBuffer(j))
-            | PHP:
-            br
-            pre.codeExample.
-              $ch #[span.orange =] #[span.purple curl_init]();
-              #[span.purple curl_setopt]($ch, CURLOPT_URL, #[span.green '#{host}:#{port}/#{streamId}']);
-              #[span.purple curl_setopt]($ch, CURLOPT_HTTPHEADER, [#[span.green 'Content-Type: application/json']]);
-              #[span.purple curl_setopt]($ch, CURLOPT_POSTFIELDS, #[span.purple json_encode]([#[span.green 'code'] #[span.orange =>] 200, #[span.green 'status'] #[span.orange =>] #[span.green 'OK']]));
-              #[span.purple curl_exec]($ch);
-              // OR
-              #[span.purple exec](#[span.green "curl -s #{host}:#{port}/#{streamId} -H 'Content-Type: application/json' -d '"].#[span.purple json_encode]([#[span.green 'code'] #[span.orange =>] 200]).#[span.green "'"]);
-            | Bash:
-            br
-            pre.codeExample.
-              curl -XPOST #[span.green '#{host}:#{port}/#{streamId}'] \
-              -H #[span.green 'Content-Type: application/json'] -d #[span.green '{"code":"200", "status": "OK"}']
+            include help
 
       a#menuNews.cursor-pointer News
       a.pull-right.green(href="https://github.com/cn007b/log") Fork me on GitHub
 
     #news.hide
       img#close.cursor-pointer.pull-right(src='/i/close.png')
-      table
-        tr
-          td
-            span.date Jun, 2018
-          td.nw
-            | Added counter block which shows count of received messages.
-        tr
-          td
-            span.date Mar, 2018
-          td.nw
-            | Added code highlight into help section. Added new-relic support. Added GOlang example.
-        tr
-          td
-            span.date Nov 16, 2017
-          td.nw
-            | Added sentry error monitoring and google analytics. Also added nsp npm package.
-        tr
-          td
-            span.date Oct 10, 2017
-          td.nw
-            | Added unit tests and coverage report 😎.
-        tr
-          td
-            span.date Sep 27, 2017
-          td.nw
-            | Added eslint.
-        tr
-          td
-            span.date Sep 21, 2017
-          td.nw
-            | Added NodeJS usage example. Switched from http to https.
-        tr
-          td
-            span.date Jun 30, 2017
-          td.nw
-            | Template engine jade replaced with pug.
-        tr
-          td
-            span.date Jun 13, 2017
-          td.nw
-            | Added JavaScript usage example.
-        tr
-          td
-            span.date May 18, 2017
-          td.nw
-            | Added code highlight 🎨.
-        tr
-          td
-            span.date Apr 19, 2017
-          td.nw
-            | Added PHP usage example.
-        tr
-          td
-            span.date Mar 22, 2017
-          td.nw
-            | Init project 🎬. Project deployed on heroku and available by url: realtimelog.herokuapp.com
+      include news
 
     #root
 
     #counterBlock.rightcenter.hide
       span#counter 0
       span#counterPrecise 0
-
 
     if googleAnalyticsId
       script(async='', src='https://www.googletagmanager.com/gtag/js?id='+googleAnalyticsId)

@@ -18,14 +18,14 @@
     "express": "^4.16.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "is-it-object": "^2.1.4",
-    "newrelic": "^3.3.0",
+    "newrelic": "^4.5.0",
     "pug": "2.0.3",
     "raven": "^2.2.1",
     "short-string-number": "^1.0.1",
     "socket.io": "^2.0.4",
     "socket.io-client": "^2.0.4",
     "style-loader": "^0.20.3",
-    "webpack": "^4.2.0",
+    "webpack": "^4.16.1",
     "webpack-cli": "^2.0.13"
   },
   "devDependencies": {
@@ -34,11 +34,11 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "jest": "^22.4.3",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.18.3",
+    "npm-check-updates": "^2.14.2",
     "nsp": "^3.1.0",
     "supertest": "^3.0.0",
-    "webpack-dev-server": "^3.1.1",
-    "npm-check-updates": "^2.14.1"
+    "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
     "postinstall": "npm run build",

@@ -6,6 +6,7 @@ require('../s/main.css');
 /** global: gtag */
 if (typeof gtag === 'undefined') {
   window.gtag = () => {};
+  config.googleAnalyticsEnabled = false;
 }
 
 module.exports = {
