@@ -42,6 +42,12 @@ router.get('/:streamId?', (req, res) => {
  * @param {Object} res HTTP response.
  */
 router.post('/:streamId?', (req, res) => {
+  if (typeof global.socket === 'undefined') {
+    res.status(500);
+    res.send('Runtime error: socket is disconnected.');
+    return;
+  }
+
   // Capture message sender ip address as additional information.
   const ip = request.getIp(req);
 
