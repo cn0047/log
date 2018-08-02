@@ -5,7 +5,8 @@ const { trackClickCodeExample } = require('./../services/googleAnalytics');
  * Handler for menu "news" link, which is open menu block.
  */
 document.getElementById('menuNews').addEventListener('click', () => {
-  document.getElementById('news').style.display = 'block';
+  const newsStyle = document.getElementById('news').style;
+  newsStyle.display = (newsStyle.display === 'none') ? 'block' : 'none';
 });
 
 /**
