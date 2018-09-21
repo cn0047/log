@@ -17,6 +17,13 @@ socket.on('connect', () => {
 });
 
 /**
+ * Handler for WebSocket 'disconnect' event.
+ */
+socket.on('disconnect', () => {
+  // By default `autoConnect` is enabled, so no use to do any actions here.
+});
+
+/**
  * Handler for new data.
  * Renders data on web page (add to the bottom).
  *

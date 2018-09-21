@@ -43,8 +43,8 @@ router.get('/:streamId?', (req, res) => {
  */
 router.post('/:streamId?', (req, res) => {
   if (typeof global.socket === 'undefined') {
-    res.status(500);
-    res.send('Runtime error: socket is disconnected.');
+    res.status(406);
+    res.send('Runtime error 20180921-1: socket is undefined.');
     return;
   }
 
