@@ -1,2 +1,2 @@
 There is no issue template 🤓 !!!
-Feel free to create an issue in any convenient for you format.
+Feel free to create issue in any format.
