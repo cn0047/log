@@ -16,7 +16,19 @@ html(lang="en")
           div
             include help
 
-      a#menuNews.cursor-pointer News
+      .dropdown
+        div.dropbtn News
+        .dropdown-content
+          div
+            include news
+
+      .dropdown
+        div.dropbtn Sponsors
+        .dropdown-content
+          div
+            br
+            img(src='/i/jetbrains.svg')
+
       a.pull-right.green(href="https://github.com/cn007b/log") Fork me on GitHub
 
     #news.hide(style='display: none;')
