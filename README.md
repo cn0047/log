@@ -70,7 +70,3 @@ Bash:
 curl -XPOST 'https://realtimelog.herokuapp.com/test' \
 -H 'Content-Type: application/json' -d '{"code": 200, "status": "OK"}'
 ````
-
-### Sponsors
-
-![JetBrains](/public/i/jetbrains.svg)
