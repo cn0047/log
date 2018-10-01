@@ -1,12 +1,12 @@
 {
   "name": "RealTimeLog",
-  "version": "1.9.1",
+  "version": "1.10.1",
   "private": false,
   "author": "Vladimir Kovpak <cn007b@gmail.com>",
   "license": "MIT",
   "main": " src/back/index.js",
   "engines": {
-    "node": "8.5.0"
+    "node": "9.11.1"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
