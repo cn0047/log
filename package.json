@@ -46,6 +46,7 @@
     "start": "node src/back/index.js",
     "dev": "npm run dev:back",
     "dev:back": "node_modules/.bin/nodemon src/back/",
+    "dev:f": "npm run dev:front",
     "dev:front": "node_modules/.bin/webpack-dev-server --watch-poll",
     "lint": "node_modules/.bin/eslint src/",
     "test": "npm run utest:back",

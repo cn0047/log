@@ -30,6 +30,7 @@ router.get('/:streamId?', (req, res) => {
     streamId: req.params.streamId,
     sentryDSN: global.SENTRY_DSN_FRONTEND,
     googleAnalyticsId: global.GOOGLE_ANALYTICS_ID,
+    frontEndPort: global.APP_PORT_FOR_FRONT_END,
   });
 });
 
