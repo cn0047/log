@@ -73,4 +73,4 @@ curl -XPOST 'https://realtimelog.herokuapp.com/test' \
 
 ### Sponsors
 
-![JetBrains](/public/i/jetbrains.svg)
+[![JetBrains](/public/i/jetbrains.svg)](https://www.jetbrains.com/)

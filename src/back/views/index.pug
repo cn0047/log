@@ -25,7 +25,8 @@ html(lang="en")
         .dropdown-content
           div
             br
-            img(src='/i/jetbrains.svg')
+            a(href="https://www.jetbrains.com/")
+              img(src='/i/jetbrains.svg')
       a.pull-right.green(href="https://github.com/cn007b/log") Fork me on GitHub
 
     #news.hide(style='display: none;')
@@ -54,4 +55,4 @@ html(lang="en")
       sentryDSN = "#{sentryDSN}";
       Raven.config(sentryDSN).install();
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')
-    script(type='text/javascript', src=host+':'+frontEndPort+'/bundle.js')
+    script(type='text/javascript', src=host+':'+frontEndPort+'/bundle.js?v2')
