@@ -28,7 +28,7 @@ pre.codeExample.
       #[span.green "net/http"]
     )
     j, _ := json.Marshal(map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
-    http.Post(#[span.green "https://realtimelog.herokuapp.com/test"], #[span.green "application/json"], bytes.NewBuffer(j))
+    http.Post(#[span.green "#{host}:#{port}/#{streamId}"], #[span.green "application/json"], bytes.NewBuffer(j))
 | PHP:
 br
 pre.codeExample.
