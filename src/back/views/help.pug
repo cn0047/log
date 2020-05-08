@@ -13,9 +13,9 @@ br
 pre.codeExample.
     #[span.orange const] r #[span.orange =] require(#[span.green 'https']).request({
       host: #[span.green '#{hostName}'],
-    path: #[span.green '/#{streamId}'],
-    method: #[span.green 'POST'],
-    headers: {#[span.green 'Content-Type']: #[span.green 'application/json']}
+      path: #[span.green '/#{streamId}'],
+      method: #[span.green 'POST'],
+      headers: {#[span.green 'Content-Type']: #[span.green 'application/json']}
     });
     r.write(JSON.stringify({code: 200, status: #[span.green 'OK']}));
     r.end();
