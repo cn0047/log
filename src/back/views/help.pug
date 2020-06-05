@@ -44,3 +44,5 @@ br
 pre.codeExample.
     curl -XPOST #[span.green '#{host}:#{port}/#{streamId}'] \
     -H #[span.green 'Content-Type: application/json'] -d #[span.green '{"code":"200", "status": "OK"}']
+    // OR
+    ["/bin/sh", "-c", "curl -XPOST #[span.green '#{host}:#{port}/#{streamId}'] -H #[span.green 'Content-Type: application/json'] -d #[span.green '{\"code\": 200}']"]
