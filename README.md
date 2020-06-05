@@ -70,7 +70,7 @@ Bash:
 curl -XPOST 'https://realtimelog.herokuapp.com/test' \
 -H 'Content-Type: application/json' -d '{"code": 200, "status": "OK"}'
 // OR
-["/bin/sh", "-c", "curl -i -XPOST 'https://realtimelog.herokuapp.com:443/test' -H 'Content-Type: application/json' -d '{\"code\": 200, \"status\": \"ok\"}'"]
+["/bin/sh", "-c", "curl -XPOST 'https://realtimelog.herokuapp.com:443/test' -H 'Content-Type: application/json' -d '{\"code\": 200, \"status\": \"ok\"}'"]
 ````
 
 ### Sponsors
