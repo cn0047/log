@@ -4,7 +4,7 @@ br
 | JavaScript:
 br
 pre.codeExample.
-    fetch(#[span.green '#{host}:#{port}/#{streamId}'], {
+    #[span.purple fetch](#[span.green '#{host}:#{port}/#{streamId}'], {
       method: #[span.green 'post'], headers: {#[span.green 'Content-Type']: #[span.green 'application/json']},
       body: JSON.stringify({code: 200, status: #[span.green 'OK']})
     });
@@ -27,8 +27,8 @@ pre.codeExample.
       #[span.green "encoding/json"]
       #[span.green "net/http"]
     )
-    j, _ := json.Marshal(map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
-    http.Post(#[span.green "#{host}:#{port}/#{streamId}"], #[span.green "application/json"], bytes.NewBuffer(j))
+    j, _ := #[span.purple json.Marshal](map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
+    #[span.purple http.Post](#[span.green "#{host}:#{port}/#{streamId}"], #[span.green "application/json"], bytes.NewBuffer(j))
 | PHP:
 br
 pre.codeExample.
