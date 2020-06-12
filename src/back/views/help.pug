@@ -6,19 +6,19 @@ br
 pre.codeExample.
     #[span.purple fetch](#[span.green '#{host}:#{port}/#{streamId}'], {
       method: #[span.green 'post'], headers: {#[span.green 'Content-Type']: #[span.green 'application/json']},
-      body: JSON.stringify({code: 200, status: #[span.green 'OK']})
+      body: #[span.purple JSON.stringify]({code: 200, status: #[span.green 'OK']})
     });
 | NodeJS:
 br
 pre.codeExample.
-    #[span.orange const] r #[span.orange =] require(#[span.green 'https']).request({
+    #[span.orange const] r #[span.orange =] #[span.purple require](#[span.green 'https']).#[span.purple request]({
       host: #[span.green '#{hostName}'],
       path: #[span.green '/#{streamId}'],
       method: #[span.green 'POST'],
       headers: {#[span.green 'Content-Type']: #[span.green 'application/json']}
     });
-    r.write(JSON.stringify({code: 200, status: #[span.green 'OK']}));
-    r.end();
+    #[span.purple r.write](#[span.purple JSON.stringify]({code: 200, status: #[span.green 'OK']}));
+    #[span.purple r.end]();
 | GO:
 br
 pre.codeExample.
@@ -28,7 +28,7 @@ pre.codeExample.
       #[span.green "net/http"]
     )
     j, _ := #[span.purple json.Marshal](map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
-    #[span.purple http.Post](#[span.green "#{host}:#{port}/#{streamId}"], #[span.green "application/json"], bytes.NewBuffer(j))
+    #[span.purple http.Post](#[span.green "#{host}:#{port}/#{streamId}"], #[span.green "application/json"], #[span.purple bytes.NewBuffer](j))
 | PHP:
 br
 pre.codeExample.
