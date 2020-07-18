@@ -40,7 +40,7 @@ r.write(JSON.stringify({code: 200, status: 'OK'}));
 r.end();
 ````
 
-GO:
+Go:
 
 ````go
 import (
@@ -70,7 +70,7 @@ Bash:
 curl -XPOST 'https://realtimelog.herokuapp.com/test' \
 -H 'Content-Type: application/json' -d '{"code": 200, "status": "OK"}'
 // OR
-["/bin/sh", "-c", "curl -XPOST 'https://realtimelog.herokuapp.com:443/test' -H 'Content-Type: application/json' -d '{\"code\": 200}'"]
+["sh", "-c", "curl -XPOST 'https://realtimelog.herokuapp.com:443/test' -H 'Content-Type: application/json' -d '{\"code\": 200}'"]
 ````
 
 ### Sponsors
