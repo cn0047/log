@@ -5,6 +5,7 @@ This is simple REAL-TIME log.
 [![Coverage Status](https://coveralls.io/repos/github/cn007b/log/badge.svg?branch=master)](https://coveralls.io/github/cn007b/log?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1b5adb99d453499e88aa9e4b7314e979)](https://www.codacy.com/app/cn007b/log?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cn007b/log&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e1b69241abdf0aa0b4cf/maintainability)](https://codeclimate.com/github/cn007b/log/maintainability)
+[![PyPI](https://img.shields.io/badge/pypi-realtimelog-brightgreen?style=)](https://pypi.org/project/realtimelog/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ![Demo: how to use REAL-TIME log](/public/i/demo.gif)
