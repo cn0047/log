@@ -19,7 +19,7 @@ pre.codeExample.
     });
     #[span.purple r.write](#[span.purple JSON.stringify]({code: 200, status: #[span.green 'OK']}));
     #[span.purple r.end]();
-| GO:
+| Go:
 br
 pre.codeExample.
     import (
@@ -45,4 +45,4 @@ pre.codeExample.
     #[span.purple curl] -XPOST #[span.green '#{host}:#{port}/#{streamId}'] \
     -H #[span.green 'Content-Type: application/json'] -d #[span.green '{"code":"200", "status": "OK"}']
     // OR
-    ["/bin/sh", "-c", "curl -XPOST #[span.green '#{host}:#{port}/#{streamId}'] -H #[span.green 'Content-Type: application/json'] -d #[span.green '{\"code\": 200}']"]
+    ["sh", "-c", "curl -XPOST #[span.green '#{host}:#{port}/#{streamId}'] -H #[span.green 'Content-Type: application/json'] -d #[span.green '{\"code\": 200}']"]
