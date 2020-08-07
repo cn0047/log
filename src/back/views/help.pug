@@ -27,7 +27,7 @@ pre.codeExample.
       #[span.green "encoding/json"]
       #[span.green "net/http"]
     )
-    j, _ := #[span.purple json.Marshal](map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
+    j, _ #[span.orange :=] #[span.purple json.Marshal](map[string]string{#[span.green "code"]: #[span.green "200"], #[span.green "status"]: #[span.green "ok"]})
     #[span.purple http.Post](#[span.green "#{host}:#{port}/#{streamId}"], #[span.green "application/json"], #[span.purple bytes.NewBuffer](j))
 | PHP:
 br
