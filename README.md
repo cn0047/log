@@ -65,6 +65,18 @@ curl_exec($ch);
 exec("curl -s https://realtimelog.herokuapp.com/test -H 'Content-Type: application/json' -d '".json_encode(['code' => 200])."'");
 ````
 
+Python:
+
+````py
+import requests
+import json
+requests.post(
+  'https://realtimelog.herokuapp.com/test',
+  data=json.dumps({'code': 200, 'status': 'OK'}),
+  headers={'Content-Type': 'application/json'},
+)
+````
+
 Bash:
 
 ````bash
