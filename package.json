@@ -22,7 +22,7 @@
     "pug": "2.0.3",
     "raven": "^2.2.1",
     "short-string-number": "^1.0.1",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.5.0",
     "socket.io-client": "^2.0.4",
     "style-loader": "^0.20.3",
     "webpack": "^4.16.1",
